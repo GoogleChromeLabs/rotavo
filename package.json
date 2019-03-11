@@ -1,0 +1,21 @@
+{
+  "name": "rotavo",
+  "version": "1.0.0",
+  "description": "Create a whole drawing with just one line using the on-screen controls in this progressive web app.",
+  "main": "public/bundle.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "author": "Rowan Merewood <rowan@merewood.org>",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/GoogleChromeLabs/rotavo",
+  "dependencies": {
+    "@webcomponents/custom-elements": "^1.2.1",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-terser": "^4.0.4",
+    "rollup": "^1.6.0",
+    "shake.js": "^1.2.2",
+    "simplify-js": "^1.2.3"
+  }
+}
