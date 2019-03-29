@@ -18,6 +18,8 @@
 
 Enjoy a healthy diversion over at https://rotavo-pwa.firebaseapp.com
 
+![Screenshot of Rotavo from ChromeOS showing a depiction of the Chrome Dino](https://user-images.githubusercontent.com/108052/55230605-2f6ee400-5218-11e9-9ce9-6c951d0026be.png)
+
 ## Installation
 
 1. From the project root directory:
