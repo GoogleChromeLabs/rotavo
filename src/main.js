@@ -20,6 +20,48 @@ window.customElements.define('touch-knob', TouchKnob);
 window.customElements.define('doodle-case', DoodleCase);
 window.customElements.define('toggle-fullscreen', ToggleFullscreen);
 
+window.customElements.whenDefined('touch-knob').then(setupKeydown());
+
+function setupKeydown() {
+  const horzKnob = document.querySelector('.horz-knob');
+  const vertKnob = document.querySelector('.vert-knob');
+  const doodleCase = document.querySelector('doodle-case');
+
+  document.addEventListener("keydown", event => {
+    switch (event.key) {
+      case 'w':
+        horzKnob.rotateTo(0.01);
+        break;
+      case 'd':
+        horzKnob.rotateTo(1.57);
+        break;
+      case 's':
+        horzKnob.rotateTo(3.14);
+        break;
+      case 'a':
+        horzKnob.rotateTo(-1.56);
+        break;
+        case 'i':
+        vertKnob.rotateTo(0.01);
+        break;
+      case 'l':
+        vertKnob.rotateTo(1.57);
+        break;
+      case 'k':
+        vertKnob.rotateTo(3.14);
+        break;
+      case 'j':
+        vertKnob.rotateTo(-1.56);
+        break;
+      case 'x':
+        doodleCase._onShake();
+        break;
+      case 'm':
+        doodleCase._toggleDetail();
+    }
+  })
+}
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
     navigator.serviceWorker
