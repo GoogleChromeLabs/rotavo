@@ -18,7 +18,7 @@ export class TouchKnob extends HTMLElement {
     this._angle = 1;
     this._canDraw = true;
     this._rotations = 0;
-    this._scale = 10;
+    this._scale = 1;
     this._TWO_PI = 2 * Math.PI;
     this.min = 0;
     this.max = 298;
@@ -59,10 +59,21 @@ export class TouchKnob extends HTMLElement {
     this.removeEventListener('mousedown', this._onMousedown);
   }
 
+  rotateTo(angle) {
+    this._handleStart();
+
+    this._previousAttemptedAngle = this._attemptedAngle;
+    this._attemptedAngle = angle;
+
+    this._handleMove();
+    this._handleEnd();
+  }
+
   _onMousedown(e) {
     this._touchX = e.clientX;
     this._touchY = e.clientY;
 
+    this._initTouchAngle();
     this._handleStart();
 
     document.addEventListener('mousemove', this._onMousemove);
@@ -74,6 +85,7 @@ export class TouchKnob extends HTMLElement {
     this._touchX = e.clientX;
     this._touchY = e.clientY;
 
+    this._calcTouchAngle();
     this._handleMove();
   }
 
@@ -93,6 +105,7 @@ export class TouchKnob extends HTMLElement {
     this._touchX = e.changedTouches[0].clientX;
     this._touchY = e.changedTouches[0].clientY;
 
+    this._initTouchAngle();
     this._handleStart();
 
     this.addEventListener('touchmove', this._onTouchmove);
@@ -106,6 +119,7 @@ export class TouchKnob extends HTMLElement {
     this._touchX = e.targetTouches[0].clientX;
     this._touchY = e.targetTouches[0].clientY;
 
+    this._calcTouchAngle();
     this._handleMove();
   }
 
@@ -128,6 +142,7 @@ export class TouchKnob extends HTMLElement {
     this._touchY = e.clientY;
     this.setPointerCapture(e.pointerId);
 
+    this._initTouchAngle();
     this._handleStart();
 
     this.addEventListener('pointermove', this._onPointermove);
@@ -140,6 +155,7 @@ export class TouchKnob extends HTMLElement {
     this._touchX = e.clientX;
     this._touchY = e.clientY;
 
+    this._calcTouchAngle();
     this._handleMove();
   }
 
@@ -156,16 +172,8 @@ export class TouchKnob extends HTMLElement {
   }
 
   _handleStart() {
-    this._centerX = this.offsetLeft - this.scrollLeft + this.clientLeft + this.offsetWidth / 2;
-    this._centerY = this.offsetTop - this.scrollTop + this.clientTop + this.offsetHeight / 2;
-
     this._initialAngle = this._angle;
     this._initialValue = parseFloat(this.value);
-    this._initialTouchAngle = Math.atan2(
-      this._touchY - this._centerY,
-      this._touchX - this._centerX
-    );
-
     this._attemptedAngle = this._angle;
     this._attemptedRotations = this._rotations;
     this._attemptedValue = this.value;
@@ -177,7 +185,8 @@ export class TouchKnob extends HTMLElement {
   _handleMove() {
     if (this._canDraw === true) {
       this._canDraw = false;
-      window.requestAnimationFrame(this._drawState);
+      // window.requestAnimationFrame(this._drawState);
+      this._drawState();
     }
 
     const evt = new CustomEvent('touch-knob-move', { bubbles: true });
@@ -188,21 +197,33 @@ export class TouchKnob extends HTMLElement {
     const evt = new CustomEvent('touch-knob-end', { bubbles: true });
     this.dispatchEvent(evt);
   }
-  _drawState() {
-    const previousAttemptedAngle = this._attemptedAngle;
+
+  _initTouchAngle() {
+    this._centerX = this.offsetLeft - this.scrollLeft + this.clientLeft + this.offsetWidth / 2;
+    this._centerY = this.offsetTop - this.scrollTop + this.clientTop + this.offsetHeight / 2;
+    this._initialTouchAngle = Math.atan2(
+      this._touchY - this._centerY,
+      this._touchX - this._centerX
+    );
+  }
+
+  _calcTouchAngle() {
+    this._previousAttemptedAngle = this._attemptedAngle;
     this._attemptedAngle =
       this._initialAngle - this._initialTouchAngle
       + Math.atan2(this._touchY - this._centerY, this._touchX - this._centerX);
     this._attemptedAngle = this._attemptedAngle
       - this._TWO_PI * Math.floor((this._attemptedAngle + Math.PI) / this._TWO_PI);
+  }
 
+  _drawState() {
     if (
-      previousAttemptedAngle > -1.57 && previousAttemptedAngle < 0
+      this._previousAttemptedAngle > -1.57 && this._previousAttemptedAngle < 0
       && this._attemptedAngle >= 0 && this._attemptedAngle <= 1.57
     ) {
       this._attemptedRotations++;
     } else if (
-      previousAttemptedAngle < 1.57 && previousAttemptedAngle > 0
+      this._previousAttemptedAngle < 1.57 && this._previousAttemptedAngle > 0
       && this._attemptedAngle <= 0 && this._attemptedAngle >= -1.57
     ) {
       this._attemptedRotations--;
