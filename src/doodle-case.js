@@ -78,6 +78,7 @@ export class DoodleCase extends HTMLElement {
     super();
     this._canDraw = true;
     this._lastSketchAngle = null;
+    this._lastDraw = 0;
 
     this._onShake = this._onShake.bind(this);
     this._optimizeSketch = this._optimizeSketch.bind(this);
@@ -124,8 +125,9 @@ export class DoodleCase extends HTMLElement {
   }
 
   _requestUpdateSketch() {
-    if (this._canDraw === true) {
+    if (this._canDraw === true && Date.now() - this._lastDraw > 50) {
       this._canDraw = false;
+      this._lastDraw = Date.now();
       window.requestAnimationFrame(this._updateSketch);
     }
   }
