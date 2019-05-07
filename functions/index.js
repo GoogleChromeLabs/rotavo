@@ -45,7 +45,7 @@ shareApp.get('/sharing/:ref', (req, res) => {
         "arContent":{
             "@type":"WebPage",
             "url":"/details/rotavo/",
-            "image":"https://rotavo-pwa.firebaseapp.com/sharing/${ref}/rotavo.png",
+            "image":"https://rotavo-pwa.firebaseapp.com/sharing/${ref}/rotavo-${ref}.png",
             "mainEntity": {
                 "url": "https://rotavo-pwa.firebaseapp.com/sharing/${ref}"
             }
@@ -53,12 +53,12 @@ shareApp.get('/sharing/:ref', (req, res) => {
         }
         </script>
         <h1>Share your drawing</h1>
-        <p><a href="/sharing/${ref}/rotavo.png" download>[Download]</a></p>
-        <img class="share-image" src="/sharing/${ref}/rotavo.png" />`
+        <p><a href="/sharing/${ref}/rotavo-${ref}.png" download>[Download]</a></p>
+        <img class="share-image" src="/sharing/${ref}/rotavo-${ref}.png" />`
     );
 });
 
-shareApp.get('/sharing/:ref/rotavo.png', async (req, res) => {
+shareApp.get('/sharing/:ref/rotavo-:extra.png', async (req, res) => {
     const ref = req.params.ref;
     const valid = new RegExp('^[a-z0-9]+$', 'gi');
 
@@ -67,15 +67,11 @@ shareApp.get('/sharing/:ref/rotavo.png', async (req, res) => {
     }
 
     const filename = ref + '.png';
-    // const tempFilePath = path.join(os.tmpdir(), filename);
 
     const bucket = admin.storage().bucket();
     bucket.file(filename).download().then(function(data) {
         res.type('image/png').send(data[0]);
       });
-    // await bucket.file(filename).download({ destination: tempFilePath });
-    // res.sendFile(tempFilePath);
-    // return fs.unlinkSync(tempFilePath);
 });
 
 const opts = { memory: '2GB', timeoutSeconds: 60 };
