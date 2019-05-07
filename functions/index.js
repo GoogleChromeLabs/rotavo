@@ -52,9 +52,13 @@ shareApp.get('/sharing/:ref', (req, res) => {
         }
         }
         </script>
+        <main class="share-page">
         <h1>Share your drawing</h1>
-        <p><a href="/sharing/${ref}/rotavo-${ref}.png" download>[Download]</a></p>
-        <img class="share-image" src="/sharing/${ref}/rotavo-${ref}.png" />`
+        <p>Here's your beautiful creation! Use the <a href="/sharing/${ref}/rotavo-${ref}.png" class="highlight" download>[Download]</a> link to get the full size image.</p>
+        <p>Don't forget to use the <span class="highlight">#rotavo</span> and <span class="highlight">#io19</span> hashtags when you share!</p>
+        <p>Keep on doodling with the <a href="https://rotavo-pwa.firebaseapp.com" class="highlight">Rotavo PWA</a>: you can add it to your homescreen and draw offline.
+        <img class="share-image" src="/sharing/${ref}/rotavo-${ref}.png" />
+        </main>`
     );
 });
 

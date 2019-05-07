@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+/* @import url('https://fonts.googleapis.com/css?family=Raleway'); */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
 
 html {
   margin: 0;
@@ -23,7 +25,8 @@ html {
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: 'Roboto Mono', sans-serif;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -110,7 +113,7 @@ body {
   border: 6px solid #0084D6;
   border-radius: 12px;
   background: #eff2f4;
-  width: 600px;
+  width: 750px;
   padding: 40px;
   margin: 0 auto 0 auto;
   box-shadow: 10px 14px 6px 0px rgba(0, 0, 0, 0.4);
@@ -118,11 +121,15 @@ body {
 }
 
 .options-active {
-  transform: translate(0, -50%);
+  transform: translate(0, -20%);
 }
 
 h1 {
   padding: 5px;
+}
+
+h2 {
+  font-size: 85%;
 }
 
 .highlight {
@@ -143,15 +150,22 @@ h1 {
 }
 
 .drawing-link {
-  font-size: 80%;
 }
 
 .drawing-link a {
-  font-size: 90%;
-  font-family: monospace;
 }
 
 .share-image {
-  width: 98vw;
-  margin: 1vw;
+  display: block;
+  margin: 10px auto 0 auto;
+  min-width: 200px;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.share-page {
+  padding: 2vh 3vw 2vh 3vw;
+  border: 6px solid #FFB600;
+  border-radius: 12px;
+  background: hsl(43, 100%, 80%);
 }

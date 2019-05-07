@@ -50,13 +50,13 @@
 
 <div class="casing">
   <main>
-    <div class="screen fast">
+    <div class="screen fancy">
       <svg class="active-sketch" preserveAspectRatio="none" x="0" y="0" viewBox="-2 -2 302 302"
         xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="pencil-effect">
             <feTurbulence type="turbulence" baseFrequency="0.5" numOctaves="1" result="turbulence" />
-            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="2" xChannelSelector="R"
+            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="3.5" xChannelSelector="R"
               yChannelSelector="G" />
           </filter>
           <filter id="drop-shadow">
@@ -113,12 +113,16 @@
     <p><span class="highlight">Scan the QR code</span> to the left using the <span class="highlight">I/O Sandbox
         Scanner</span> or your camera to get an image of your drawing to share with the world! Your drawing will be
       available for one hour from now, so don't leave it too long.</p>
-    <h2>Drawing mode</h2>
+    <h2>Controls</h2>
+    <p>🔄 Rotate the <span class="highlight">left joystick</span> to move horizontally</p>
+    <p>🔃 Rotate the <span class="highlight">right joystick</span> to move vertically</p>
+    <p>🖐 Press the "<span class="highlight">Clear</span>" button to toggle the drawing mode</p>
+    <p>🖐 Press the "<span class="highlight">Share</span>" button again to go back to your art</p>
 
     <p class="disclaimer">Your drawing is stored on Cloud Firestore and Firebase Hosting. It will be available for one
       hour from now at the displayed URL to give you time to download it. We may retain aggregate data for reporting on
       the usage of this kiosk.</p>
-    <p class="drawing-link">In case you really want the URL: <a href="#"></a></p>
+    <p class="drawing-link">In case you really want the URL:<br> <a href="#"></a></p>
   </section>
   <nav class="controls">
     <touch-knob value="2" scale="2" class="horz-knob knob">
