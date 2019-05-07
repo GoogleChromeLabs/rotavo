@@ -60,7 +60,6 @@ shareApp.get('/sharing/:ref', (req, res) => {
 
 shareApp.get('/sharing/:ref/rotavo.png', async (req, res) => {
     const ref = req.params.ref;
-    console.log(ref);
     const valid = new RegExp('^[a-z0-9]+$', 'gi');
 
     if (!valid.test(ref)) {
@@ -68,9 +67,7 @@ shareApp.get('/sharing/:ref/rotavo.png', async (req, res) => {
     }
 
     const filename = ref + '.png';
-    console.log(filename);
-    const tempFilePath = path.join(os.tmpdir(), filename);
-    console.log(tempFilePath);
+    // const tempFilePath = path.join(os.tmpdir(), filename);
 
     const bucket = admin.storage().bucket();
     bucket.file(filename).download().then(function(data) {
