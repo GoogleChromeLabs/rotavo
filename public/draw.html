@@ -1,0 +1,81 @@
+<!--
+ Copyright 2018 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/kiosk.css" />
+
+<div class="casing">
+  <main>
+    <div class="screen fast">
+      <svg class="active-sketch" preserveAspectRatio="none" x="0" y="0" viewBox="-2 -2 302 302"
+        xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="pencil-effect">
+            <feTurbulence type="turbulence" baseFrequency="0.5" numOctaves="1" result="turbulence" />
+            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="2" xChannelSelector="R"
+              yChannelSelector="G" />
+          </filter>
+          <filter id="drop-shadow">
+            <feDropShadow dx="1" dy="1" stdDeviation="0.4" flood-color="#000000" flood-opacity="0.4" />
+          </filter>
+          <linearGradient id="rainbow-effect" x1="0%" y1="0%" x2="100%" y2="100%" spreadMethod="reflect">
+            <stop offset="0%" stop-color="red">
+              <animate attributeName="stop-color" values="red;orange;yellow;green;blue;indigo;violet;red" dur="4s"
+                repeatCount="indefinite" />
+            </stop>
+            <stop offset="17%" stop-color="orange">
+              <animate attributeName="stop-color" values="orange;yellow;green;blue;indigo;violet;red;orange" dur="4s"
+                repeatCount="indefinite" />
+            </stop>
+            <stop offset="34%" stop-color="yellow">
+              <animate attributeName="stop-color" values="yellow;green;blue;indigo;violet;red;orange;yellow" dur="4s"
+                repeatCount="indefinite" />
+            </stop>
+            <stop offset="51%" stop-color="green">
+              <animate attributeName="stop-color" values="green;blue;indigo;violet;red;orange;yellow;green" dur="4s"
+                repeatCount="indefinite" />
+            </stop>
+            <stop offset="68%" stop-color="blue">
+              <animate attributeName="stop-color" values="blue;indigo;violet;red;orange;yellow;green;blue" dur="4s"
+                repeatCount="indefinite" />
+            </stop>
+            <stop offset="85%" stop-color="indigo">
+              <animate attributeName="stop-color" values="indigo;violet;red;orange;yellow;green;blue;indigo" dur="4s"
+                repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stop-color="violet">
+              <animate attributeName="stop-color" values="violet;red;orange;yellow;green;blue;indigo;violet" dur="4s"
+                repeatCount="indefinite" />
+            </stop>
+          </linearGradient>
+          <radialGradient id="avoflesh">
+            <stop offset="40%" stop-color="#F2E880"></stop>
+            <stop offset="90%" stop-color="#6C8F32"></stop>
+          </radialGradient>
+          <radialGradient id="avoseed">
+              <stop offset="0%" stop-color="#c15c37"></stop>
+              <stop offset="10%" stop-color="#c15c37"></stop>
+          </radialGradient>
+        </defs>
+        <path class="sketch-path" d="M8 8 M12 12 M10 10 "></path>
+        <line class="sketch-stylus" x1="10" x2="10" y1="10" y2="10" />
+      </svg>
+    </div>
+  </main>
+</div>
+<script src="/draw.js" async defer></script>

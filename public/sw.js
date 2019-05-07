@@ -19,14 +19,14 @@ self.addEventListener('install', (event) => {
     caches.open(cacheName).then((cache) => {
       return cache.addAll([
         '/',
-        '/bundle.js',
+        '/main.js',
         '/img/icons/android-chrome-192x192.png',
         '/img/icons/android-chrome-512x512.png',
         '/img/icons/favicon-16x16.png',
         '/img/icons/favicon-32x32.png',
         '/favicon.ico',
         '/index.html',
-        '/styles.css',
+        '/main.css',
       ]);
     }).then(() => {
       return self.skipWaiting();

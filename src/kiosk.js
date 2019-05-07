@@ -13,7 +13,7 @@
 // limitations under the License.
 import '@webcomponents/custom-elements';
 import { TouchKnob } from './touch-knob';
-import { RotavoApp } from './RotavoApp';
+import { RotavoKiosk } from './RotavoKiosk';
 import { ToggleFullscreen } from './toggle-fullscreen';
 
 window.customElements.define('touch-knob', TouchKnob);
@@ -22,7 +22,7 @@ window.customElements.define('toggle-fullscreen', ToggleFullscreen);
 window.customElements.whenDefined('touch-knob').then(initApp());
 
 function initApp() {
-  const app = new RotavoApp(document);
+  const app = new RotavoKiosk(document);
 }
 
 if ('serviceWorker' in navigator) {

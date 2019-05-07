@@ -15,10 +15,9 @@
 export class TouchKnob extends HTMLElement {
   constructor() {
     super();
-    this._angle = 1;
+    this._angle = 0;
     this._canDraw = true;
     this._rotations = 0;
-    this._scale = 1;
     this._TWO_PI = 2 * Math.PI;
     this.min = 0;
     this.max = 298;
@@ -41,6 +40,14 @@ export class TouchKnob extends HTMLElement {
 
   set value(value) {
     this.setAttribute('value', value);
+  }
+
+  get scale() {
+    return this.hasAttribute('scale') ? this.getAttribute('scale') : 1;
+  }
+
+  set scale(scale) {
+    this.setAttribute('scale', scale);
   }
 
   connectedCallback() {
@@ -69,11 +76,29 @@ export class TouchKnob extends HTMLElement {
     this._handleEnd();
   }
 
+  rotateToStart(angle) {
+    this._initCenter();
+    this._touchX = this._centerX + Math.sin(angle) * 30;
+    this._touchY = this._centerY - Math.cos(angle) * 30;
+    this._handleStart();
+  }
+
+  rotateToContinue(angle) {
+    this._touchX = this._centerX + Math.sin(angle) * 30;
+    this._touchY = this._centerY - Math.cos(angle) * 30;
+    this._calcTouchAngle();
+    this._handleMove();
+  }
+
+  rotateToEnd() {
+    this._handleEnd();
+  }
+
   _onMousedown(e) {
     this._touchX = e.clientX;
     this._touchY = e.clientY;
 
-    this._initTouchAngle();
+    this._initCenter();
     this._handleStart();
 
     document.addEventListener('mousemove', this._onMousemove);
@@ -105,7 +130,7 @@ export class TouchKnob extends HTMLElement {
     this._touchX = e.changedTouches[0].clientX;
     this._touchY = e.changedTouches[0].clientY;
 
-    this._initTouchAngle();
+    this._initCenter();
     this._handleStart();
 
     this.addEventListener('touchmove', this._onTouchmove);
@@ -142,7 +167,7 @@ export class TouchKnob extends HTMLElement {
     this._touchY = e.clientY;
     this.setPointerCapture(e.pointerId);
 
-    this._initTouchAngle();
+    this._initCenter();
     this._handleStart();
 
     this.addEventListener('pointermove', this._onPointermove);
@@ -172,6 +197,7 @@ export class TouchKnob extends HTMLElement {
   }
 
   _handleStart() {
+    this._initTouchAngle();
     this._initialAngle = this._angle;
     this._initialValue = parseFloat(this.value);
     this._attemptedAngle = this._angle;
@@ -198,9 +224,12 @@ export class TouchKnob extends HTMLElement {
     this.dispatchEvent(evt);
   }
 
-  _initTouchAngle() {
+  _initCenter() {
     this._centerX = this.offsetLeft - this.scrollLeft + this.clientLeft + this.offsetWidth / 2;
     this._centerY = this.offsetTop - this.scrollTop + this.clientTop + this.offsetHeight / 2;
+  }
+
+  _initTouchAngle() {
     this._initialTouchAngle = Math.atan2(
       this._touchY - this._centerY,
       this._touchX - this._centerX
@@ -231,10 +260,10 @@ export class TouchKnob extends HTMLElement {
 
     if (this._attemptedAngle >= 0) {
       this._attemptedValue =
-        (this._attemptedAngle + this._TWO_PI * this._attemptedRotations) * this._scale;
+        (this._attemptedAngle + this._TWO_PI * this._attemptedRotations) * this.scale;
     } else if (this._attemptedAngle < 0) {
       this._attemptedValue =
-        (this._attemptedAngle + this._TWO_PI * (this._attemptedRotations + 1)) * this._scale;
+        (this._attemptedAngle + this._TWO_PI * (this._attemptedRotations + 1)) * this.scale;
     }
 
     if (this._attemptedValue >= this.min && this._attemptedValue <= this.max) {

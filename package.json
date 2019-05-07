@@ -4,18 +4,24 @@
   "description": "Create a whole drawing with just one line using the on-screen controls in this progressive web app.",
   "main": "public/bundle.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "build:watch": "rollup -cw"
   },
   "author": "Rowan Merewood <rowan@merewood.org>",
   "license": "Apache-2.0",
   "repository": "https://github.com/GoogleChromeLabs/rotavo",
   "dependencies": {
-    "@webcomponents/custom-elements": "^1.2.2",
+    "@webcomponents/custom-elements": "^1.2.4",
+    "firebase": "^5.11.1",
+    "firebase-admin": "^7.3.0",
+    "firebase-functions": "^2.3.0",
+    "qrious": "^4.0.2",
+    "rollup": "^1.11.3",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-terser": "^4.0.4",
-    "rollup": "^1.10.0",
     "shake.js": "^1.2.2",
     "simplify-js": "^1.2.3"
-  }
+  },
+  "devDependencies": {}
 }

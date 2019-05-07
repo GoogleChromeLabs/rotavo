@@ -17,11 +17,11 @@
 <html lang="en">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rotavo</title>
+<title>Kiosk mode - Rotavo</title>
 <meta name="Description" content="Rotavo" />
 <link rel="canonical" href="https://rotavo-pwa.firebaseapp.com" />
 <link rel="manifest" href="/manifest.json" />
-<link rel="stylesheet" href="/main.css" />
+<link rel="stylesheet" href="/kiosk.css" />
 <meta name="theme-color" content="#356211" />
 <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
@@ -97,26 +97,31 @@
             <stop offset="90%" stop-color="#6C8F32"></stop>
           </radialGradient>
           <radialGradient id="avoseed">
-              <stop offset="0%" stop-color="#c15c37"></stop>
-              <stop offset="10%" stop-color="#c15c37"></stop>
+            <stop offset="0%" stop-color="#c15c37"></stop>
+            <stop offset="10%" stop-color="#c15c37"></stop>
           </radialGradient>
         </defs>
-        <path class="sketch-path" d="M8 8 M12 12 M10 10 "></path>
-        <line class="sketch-stylus" x1="10" x2="10" y1="10" y2="10" />
-        <!-- <path class="sketch-path" d="M160 30h75m0 0v10h10v45h-50v10h30v10h-40v20h25v25h-10v-15h-10v30h-10v15h-10v10h-10v40h10v10h-20v-30h-10v-10h-10v10h-10v10h-10v10h10v10h-20v-40H90v-10H80v-10H70v-10H60v-10H50v-55h10v20h10v10h10v10h20v-10h10v-10h15v-10h15v-10h10V40h10V30h10v25h10V45h-10V30z" />
-        <line class="sketch-stylus" x1="160" x2="160" y1="30" y2="30" /> -->
+        <path class="sketch-path" d="M0 0 M4 4 M2 2 "></path>
+        <line class="sketch-stylus" x1="2" x2="2" y1="2" y2="2" />
       </svg>
     </div>
   </main>
+  <section class="options">
+
+    <canvas class="qrcode"></canvas>
+    <h1><span class="highlight">Share your drawing</span></h1>
+    <p><span class="highlight">Scan the QR code</span> to the left using the <span class="highlight">I/O Sandbox
+        Scanner</span> or your camera to get an image of your drawing to share with the world! Your drawing will be
+      available for one hour from now, so don't leave it too long.</p>
+    <h2>Drawing mode</h2>
+
+    <p class="disclaimer">Your drawing is stored on Cloud Firestore and Firebase Hosting. It will be available for one
+      hour from now at the displayed URL to give you time to download it. We may retain aggregate data for reporting on
+      the usage of this kiosk.</p>
+    <p class="drawing-link">In case you really want the URL: <a href="#"></a></p>
+  </section>
   <nav class="controls">
-    <touch-knob value="10" scale="10" class="horz-knob knob">
-      <svg preserveAspectRatio="none" x="0" y="0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-        width="100%" height="100%">
-        <path class="knob-shape" d="M50 3.333C33.333 3.333 16.667 36.666 16.667 60c0 23.334 16.666 36.667 33.333 36.667 16.667 0 33.334-13.334 33.333-36.667C83.333 36.667 66.667 3.333 50 3.333z" />
-        <path class="knob-seed" d="M50 43.333c-10 0-20 13.333-20 25S40 90 50 90s20-10 20-21.667c0-11.666-10-25-20-25z" />
-        <text class="knob-label" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">H</text>
-        <text class="knob-arrow" x="50%" y="70%" dominant-baseline="middle" text-anchor="middle">⇄</text>
-      </svg>
+    <touch-knob value="2" scale="2" class="horz-knob knob">
     </touch-knob>
     <div class="buttons">
       <button class="button-jiggle">👋 Jiggle</button>
@@ -124,15 +129,8 @@
       <button class="button-detail" value="fancy">✨ Fancy</button>
       <a href="https://github.com/GoogleChromeLabs/rotavo" target="_blank"><button>❔ Learn</button></a>
     </div>
-    <touch-knob value="10" scale="10" class="vert-knob knob">
-      <svg preserveAspectRatio="none" x="0" y="0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-        width="100%" height="100%">
-        <path class="knob-shape" d="M50 3.333C33.333 3.333 16.667 36.666 16.667 60c0 23.334 16.666 36.667 33.333 36.667 16.667 0 33.334-13.334 33.333-36.667C83.333 36.667 66.667 3.333 50 3.333z" />
-        <path class="knob-seed" d="M50 43.333c-10 0-20 13.333-20 25S40 90 50 90s20-10 20-21.667c0-11.666-10-25-20-25z" />
-        <text class="knob-label" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">V</text>
-        <text class="knob-arrow" x="50%" y="70%" dominant-baseline="middle" text-anchor="middle">⇅</text>
-      </svg>
+    <touch-knob value="2" scale="2" class="vert-knob knob">
     </touch-knob>
   </nav>
 </div>
-<script src="/main.js" async defer></script>
+<script src="/kiosk.js" async defer></script>
