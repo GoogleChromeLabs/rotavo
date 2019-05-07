@@ -158,7 +158,6 @@ h2 {
 .share-image {
   display: block;
   margin: 10px auto 0 auto;
-  min-width: 200px;
   max-width: 80vw;
   max-height: 80vh;
 }
