@@ -2,7 +2,7 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "engines": {
-    "node": "8"
+    "node": "10"
   },
   "scripts": {
     "serve": "firebase serve --only functions",
@@ -12,10 +12,13 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
-    "express": "^4.16.4",
-    "firebase-admin": "^7.3.0",
-    "firebase-functions": "^2.3.0",
-    "puppeteer": "^1.15.0"
+    "express": "^4.17.1",
+    "firebase-admin": "^8.2.0",
+    "firebase-functions": "^3.0.1",
+    "puppeteer": "^1.18.0"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6"
+  }
 }
