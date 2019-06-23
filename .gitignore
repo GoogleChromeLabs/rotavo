@@ -4,3 +4,11 @@
 /node_modules/
 /public/bundle.js
 /public/bundle.js.map
+/public/draw.js
+/public/draw.js.map
+/public/kiosk.js
+/public/kiosk.js.map
+/public/main.js
+/public/main.js.map
+/public/share.js
+/public/share.js.map
