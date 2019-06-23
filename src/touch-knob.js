@@ -51,6 +51,7 @@ export class TouchKnob extends HTMLElement {
   }
 
   connectedCallback() {
+    this._angle = this.value / this.scale;
     this.style.setProperty('transform', 'rotate(' + this._angle + 'rad)');
     if ('PointerEvent' in window) {
       this.addEventListener('pointerdown', this._onPointerdown);
