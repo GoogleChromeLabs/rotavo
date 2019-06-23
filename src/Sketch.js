@@ -40,8 +40,8 @@ export class Sketch {
   
     moveTo(point) {
       point = {
-        x: parseFloat(point.x),
-        y: parseFloat(point.y)
+        x: Math.round(parseFloat(point.x)*1000)/1000,
+        y: Math.round(parseFloat(point.y)*1000)/1000
       }
   
       const angle = Math.atan2(
