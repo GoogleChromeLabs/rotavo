@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-var cacheName = 'rotavo-v20190623c';
+var cacheName = 'rotavo-v20190624f';
 
 // Cache a very basic selection of resources
 self.addEventListener('install', (event) => {

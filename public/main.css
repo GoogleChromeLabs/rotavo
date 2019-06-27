@@ -107,7 +107,6 @@ touch-knob {
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-end;
-  padding: 5px;
 }
 
 button {
@@ -121,7 +120,7 @@ button {
   border-radius: 4px;
   outline: 0;
   padding: 7px;
-  margin: 3px 1px 0 1px;
+  margin: 3px;
   color: #F2E880;
   font-weight: bold;
 }
