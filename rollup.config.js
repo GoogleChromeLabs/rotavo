@@ -19,7 +19,7 @@ import { terser } from "rollup-plugin-terser";
 export default [{
   input: 'src/main.js',
   output: {
-    file: 'public/main.js',
+    file: 'public/js/main.js',
     format: 'iife',
     sourcemap: true
   },
@@ -36,7 +36,7 @@ export default [{
 }, {
   input: 'src/kiosk.js',
   output: {
-    file: 'public/kiosk.js',
+    file: 'public/js/kiosk.js',
     format: 'iife',
     sourcemap: true
   },
@@ -54,7 +54,7 @@ export default [{
 }, {
   input: 'src/draw.js',
   output: {
-    file: 'public/draw.js',
+    file: 'public/js/draw.js',
     format: 'iife',
     sourcemap: true
   },
@@ -70,7 +70,7 @@ export default [{
 }, {
   input: 'src/share.js',
   output: {
-    file: 'public/share.js',
+    file: 'public/js/share.js',
     format: 'iife',
     sourcemap: true
   },
