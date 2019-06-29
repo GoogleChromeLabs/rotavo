@@ -22,7 +22,7 @@ window.customElements.define('toggle-fullscreen', ToggleFullscreen);
 window.customElements.whenDefined('touch-knob').then(initApp());
 
 function initApp() {
-  const app = new RotavoKiosk(document);
+  const app = new RotavoKiosk(document, true);
 }
 
 if ('serviceWorker' in navigator) {
