@@ -12,9 +12,7 @@
   "repository": "https://github.com/GoogleChromeLabs/rotavo",
   "dependencies": {
     "@webcomponents/custom-elements": "^1.2.4",
-    "firebase": "^6.2.2",
-    "firebase-admin": "^8.2.0",
-    "firebase-functions": "^3.0.1",
+    "firebase": "^6.2.4",
     "qrious": "^4.0.2",
     "rollup": "^1.16.2",
     "rollup-plugin-commonjs": "^10.0.0",
