@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-var cacheName = 'rotavo-v20190628a';
+var cacheName = 'rotavo-v20190718a';
 
 // Cache a very basic selection of resources
 self.addEventListener('install', (event) => {
@@ -19,6 +19,7 @@ self.addEventListener('install', (event) => {
     caches.open(cacheName).then((cache) => {
       return cache.addAll([
         '/',
+        '/css/main.css',
         '/favicon.ico',
         '/img/icons/android-chrome-192x192.png',
         '/img/icons/android-chrome-512x512.png',
@@ -26,7 +27,6 @@ self.addEventListener('install', (event) => {
         '/img/icons/favicon-32x32.png',
         '/index.html',
         '/js/main.js',
-        '/main.css',
       ]);
     }).then(() => {
       return self.skipWaiting();
