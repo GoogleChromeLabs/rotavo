@@ -13,34 +13,12 @@
 // limitations under the License.
 
 import { DrawingMode } from './DrawingMode';
-import { OptionsMode } from './OptionsMode';
 import { Sketch } from './Sketch';
 
 export class RotavoApp {
   constructor(rootElement, optionsModeEnabled) {
-    this._optionsModeEnabled = optionsModeEnabled;
     this._drawingMode = new DrawingMode(rootElement, this);
-
-    if (this._optionsModeEnabled) {
-      this._optionsMode = new OptionsMode(rootElement, this);
-    }
-
     this.sketchModel = new Sketch({ x: 10, y: 10 });
-
     this._drawingMode.activate();
-  }
-
-  activateOptionsMode() {
-    if (this._optionsModeEnabled) {
-      this._drawingMode.deactivate();
-      this._optionsMode.activate();
-    }
-  }
-
-  activateDrawingMode() {
-    if (this._optionsModeEnabled) {
-      this._optionsMode.deactivate();
-      this._drawingMode.activate();
-    }
   }
 }

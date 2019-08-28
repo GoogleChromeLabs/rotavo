@@ -14,7 +14,7 @@
 
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import { terser } from "rollup-plugin-terser";
+import { terser } from 'rollup-plugin-terser';
 
 export default [{
   input: 'src/main.js',
@@ -33,54 +33,4 @@ export default [{
     }),
     terser(),
   ]
-}, {
-  input: 'src/kiosk.js',
-  output: {
-    file: 'public/js/kiosk.js',
-    format: 'iife',
-    sourcemap: true
-  },
-  plugins: [
-    resolve(),
-    commonjs({
-      exclude: [
-        'node_modules/simplify-js/**',
-        'node_modules/shake.js/**',
-      ]
-    }),
-    terser(),
-  ]
-
-}, {
-  input: 'src/draw.js',
-  output: {
-    file: 'public/js/draw.js',
-    format: 'iife',
-    sourcemap: true
-  },
-  plugins: [
-    resolve(),
-    commonjs({
-      exclude: [
-      ]
-    }),
-    terser(),
-  ]
-
-}, {
-  input: 'src/share.js',
-  output: {
-    file: 'public/js/share.js',
-    format: 'iife',
-    sourcemap: true
-  },
-  plugins: [
-    resolve(),
-    commonjs({
-      exclude: [
-      ]
-    }),
-    terser(),
-  ]
-
 }];

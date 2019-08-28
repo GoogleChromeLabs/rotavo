@@ -1,35 +1,5 @@
 {
   "hosting": {
-    "rewrites": [
-      {
-        "source": "/redraw/**",
-        "destination": "/draw.html"
-      },
-      {
-        "source": "/sharing/**",
-        "function": "sharing"
-      }
-    ],
-    "headers": [
-      {
-        "headers": [
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          }
-        ],
-        "source": "**/*.png"
-      },
-      {
-        "headers": [
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          }
-        ],
-        "source": "/sharing/**"
-      }
-    ],
     "ignore": [
       "firebase.json",
       "**/.*",
