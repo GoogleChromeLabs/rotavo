@@ -75,7 +75,6 @@ export class DrawingMode {
     };
 
     this.activate = this.activate.bind(this);
-    this.deactivate = this.deactivate.bind(this);
     this._handleKeydown = this._handleKeydown.bind(this);
     this._handleKeyup = this._handleKeyup.bind(this);
     this._onShake = this._onShake.bind(this);
@@ -115,21 +114,6 @@ export class DrawingMode {
 
     this._rootElement.addEventListener('keydown', this._handleKeydown, { capture: false, passive: true });
     this._rootElement.addEventListener('keyup', this._handleKeyup, { capture: false, passive: true });
-  }
-
-  deactivate() {
-    this._rootElement.removeEventListener('touch-knob-move', this._requestUpdateSketch);
-    this._rootElement.removeEventListener('touch-knob-end', this._requestOptimizeSketch);
-
-    window.removeEventListener('shake', this._onShake, { capture: false, passive: true });
-
-    this._jiggleButton.removeEventListener('click', this._onShake, { capture: false, passive: true });
-    this._shakeDetector.stop();
-
-    this._detailButton.removeEventListener('click', this._toggleDetail, { capture: false, passive: true });
-
-    this._rootElement.removeEventListener('keydown', this._handleKeydown, { capture: false, passive: true });
-    this._rootElement.removeEventListener('keyup', this._handleKeyup, { capture: false, passive: true });
   }
 
   _isAnyKeyPressed(config) {
