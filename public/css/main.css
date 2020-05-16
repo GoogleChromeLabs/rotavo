@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 html {
   margin: 0;
   padding: 0;
@@ -61,7 +60,7 @@ body {
   align-items: flex-end;
 }
 
-touch-knob {
+input-knob {
   flex: 0 0 80px;
   width: 80px;
   height: 80px;
@@ -143,36 +142,4 @@ button:active {
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.sketch-stylus {
-  stroke: #dd9e87;
-  vector-effect: non-scaling-stroke;
-}
-
-.sketch-path {
-  stroke: #AA471F;
-  vector-effect: non-scaling-stroke;
-  fill: none;
-}
-
-.fancy>.active-sketch,
-.fancy>.erased-sketch {
-  filter: url(#pencil-effect);
-}
-
-.fancy>.active-sketch>.sketch-path,
-.fancy>.erased-sketch>.sketch-path {
-  filter: url(#drop-shadow);
-}
-
-.fanciest>.active-sketch,
-.fanciest>.erased-sketch {
-  filter: url(#pencil-effect);
-}
-
-.fanciest>.active-sketch>.sketch-path,
-.fanciest>.erased-sketch>.sketch-path {
-  stroke: url(#rainbow-effect);
-  filter: url(#drop-shadow);
 }

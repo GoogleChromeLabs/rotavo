@@ -18,14 +18,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rotavo</title>
-<meta name="Description" content="Create your own healthy and diverting doodle." />
+<meta name="Description"
+    content="Create your own healthy and diverting doodle." />
 <link rel="canonical" href="https://rotavo-pwa.firebaseapp.com" />
 <link rel="manifest" href="/manifest.json" />
 <link rel="stylesheet" href="/css/main.css" />
 <meta name="theme-color" content="#356211" />
-<link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180"
+    href="/img/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+    href="/img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+    href="/img/icons/favicon-16x16.png">
 <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#6c8f32">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="msapplication-config" content="/img/icons/browserconfig.xml">
@@ -34,105 +38,80 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@rowan_m" />
 <meta name="twitter:title" content="Rotavo" />
-<meta name="twitter:description" content="Create your own healthy and diverting doodle. 🥑" />
-<meta name="twitter:image" content="https://rotavo-pwa.firebaseapp.com/img/hello-rotavo-square.png" />
+<meta name="twitter:description"
+    content="Create your own healthy and diverting doodle. 🥑" />
+<meta name="twitter:image"
+    content="https://rotavo-pwa.firebaseapp.com/img/hello-rotavo-square.png" />
 <meta name="twitter:image:width" content="1068" />
 <meta name="twitter:image:height" content="1000" />
-<meta name="twitter:image:alt" content="Rotavo screen showing a poorly drawn representation of the word 'hello'" />
+<meta name="twitter:image:alt"
+    content="Rotavo screen showing a poorly drawn representation of the word 'hello'" />
 
 <meta property="og:url" content="https://rotavo-pwa.firebaseapp.com" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Rotavo" />
-<meta property="og:description" content="Create your own healthy and diverting doodle. 🥑" />
-<meta property="og:image" content="https://rotavo-pwa.firebaseapp.com/img/hello-rotavo-widescreen.png" />
+<meta property="og:description"
+    content="Create your own healthy and diverting doodle. 🥑" />
+<meta property="og:image"
+    content="https://rotavo-pwa.firebaseapp.com/img/hello-rotavo-widescreen.png" />
 <meta property="og:image:width" content="1837" />
 <meta property="og:image:height" content="1000" />
 
 <div class="casing">
-  <main>
-    <div class="screen fast">
-      <svg class="active-sketch" preserveAspectRatio="none" x="0" y="0" viewBox="-2 -2 302 302"
-        xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="pencil-effect">
-            <feTurbulence type="turbulence" baseFrequency="0.5" numOctaves="1" result="turbulence" />
-            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="2" xChannelSelector="R"
-              yChannelSelector="G" />
-          </filter>
-          <filter id="drop-shadow">
-            <feDropShadow dx="1" dy="1" stdDeviation="0.4" flood-color="#000000" flood-opacity="0.4" />
-          </filter>
-          <linearGradient id="rainbow-effect" x1="0%" y1="0%" x2="100%" y2="100%" spreadMethod="reflect">
-            <stop offset="0%" stop-color="red">
-              <animate attributeName="stop-color" values="red;orange;yellow;green;blue;indigo;violet;red" dur="4s"
-                repeatCount="indefinite" />
-            </stop>
-            <stop offset="17%" stop-color="orange">
-              <animate attributeName="stop-color" values="orange;yellow;green;blue;indigo;violet;red;orange" dur="4s"
-                repeatCount="indefinite" />
-            </stop>
-            <stop offset="34%" stop-color="yellow">
-              <animate attributeName="stop-color" values="yellow;green;blue;indigo;violet;red;orange;yellow" dur="4s"
-                repeatCount="indefinite" />
-            </stop>
-            <stop offset="51%" stop-color="green">
-              <animate attributeName="stop-color" values="green;blue;indigo;violet;red;orange;yellow;green" dur="4s"
-                repeatCount="indefinite" />
-            </stop>
-            <stop offset="68%" stop-color="blue">
-              <animate attributeName="stop-color" values="blue;indigo;violet;red;orange;yellow;green;blue" dur="4s"
-                repeatCount="indefinite" />
-            </stop>
-            <stop offset="85%" stop-color="indigo">
-              <animate attributeName="stop-color" values="indigo;violet;red;orange;yellow;green;blue;indigo" dur="4s"
-                repeatCount="indefinite" />
-            </stop>
-            <stop offset="100%" stop-color="violet">
-              <animate attributeName="stop-color" values="violet;red;orange;yellow;green;blue;indigo;violet" dur="4s"
-                repeatCount="indefinite" />
-            </stop>
-          </linearGradient>
-          <radialGradient id="avoflesh">
-            <stop offset="40%" stop-color="#F2E880"></stop>
-            <stop offset="90%" stop-color="#6C8F32"></stop>
-          </radialGradient>
-          <radialGradient id="avoseed">
-              <stop offset="0%" stop-color="#c15c37"></stop>
-              <stop offset="10%" stop-color="#c15c37"></stop>
-          </radialGradient>
-        </defs>
-        <path class="sketch-path" d="M8 8 M12 12 M10 10 "></path>
-        <line class="sketch-stylus" x1="10" x2="10" y1="10" y2="10" />
-        <!-- <path class="sketch-path" d="M160 30h75m0 0v10h10v45h-50v10h30v10h-40v20h25v25h-10v-15h-10v30h-10v15h-10v10h-10v40h10v10h-20v-30h-10v-10h-10v10h-10v10h-10v10h10v10h-20v-40H90v-10H80v-10H70v-10H60v-10H50v-55h10v20h10v10h10v10h20v-10h10v-10h15v-10h15v-10h10V40h10V30h10v25h10V45h-10V30z" />
-        <line class="sketch-stylus" x1="160" x2="160" y1="30" y2="30" /> -->
-      </svg>
-    </div>
-  </main>
-  <nav class="controls">
-    <touch-knob value="10" scale="10" class="horz-knob knob">
-      <svg preserveAspectRatio="none" x="0" y="0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-        width="100%" height="100%">
-        <path class="knob-shape" d="M50 3.333C33.333 3.333 16.667 36.666 16.667 60c0 23.334 16.666 36.667 33.333 36.667 16.667 0 33.334-13.334 33.333-36.667C83.333 36.667 66.667 3.333 50 3.333z" />
-        <path class="knob-seed" d="M50 43.333c-10 0-20 13.333-20 25S40 90 50 90s20-10 20-21.667c0-11.666-10-25-20-25z" />
-        <text class="knob-label" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">H</text>
-        <text class="knob-arrow" x="50%" y="70%" dominant-baseline="middle" text-anchor="middle">⇄</text>
-      </svg>
-    </touch-knob>
-    <div class="buttons">
-      <button class="button-jiggle">👋 Jiggle</button>
-      <toggle-fullscreen><button class="button-fullscreen">⤴️ Full</button></toggle-fullscreen>
-      <button class="button-detail" value="fancy">✨ Fancy</button>
-      <a href="https://github.com/GoogleChromeLabs/rotavo" target="_blank" rel="noopener"><button>❔ Learn</button></a>
-    </div>
-    <touch-knob value="10" scale="10" class="vert-knob knob">
-      <svg preserveAspectRatio="none" x="0" y="0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-        width="100%" height="100%">
-        <path class="knob-shape" d="M50 3.333C33.333 3.333 16.667 36.666 16.667 60c0 23.334 16.666 36.667 33.333 36.667 16.667 0 33.334-13.334 33.333-36.667C83.333 36.667 66.667 3.333 50 3.333z" />
-        <path class="knob-seed" d="M50 43.333c-10 0-20 13.333-20 25S40 90 50 90s20-10 20-21.667c0-11.666-10-25-20-25z" />
-        <text class="knob-label" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">V</text>
-        <text class="knob-arrow" x="50%" y="70%" dominant-baseline="middle" text-anchor="middle">⇅</text>
-      </svg>
-    </touch-knob>
-  </nav>
+    <main>
+        <div class="screen fast">
+            <canvas class="active-sketch"></canvas>
+        </div>
+    </main>
+    <nav class="controls">
+        <input-knob value="10" scale="10" min="0" max="100"
+            class="horz-knob knob">
+            <svg preserveAspectRatio="none" x="0" y="0" viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                    <radialGradient id="avoflesh">
+                        <stop offset="40%" stop-color="#F2E880"></stop>
+                        <stop offset="90%" stop-color="#6C8F32"></stop>
+                    </radialGradient>
+                    <radialGradient id="avoseed">
+                        <stop offset="0%" stop-color="#c15c37"></stop>
+                        <stop offset="10%" stop-color="#c15c37"></stop>
+                    </radialGradient>
+                </defs>
+                <path class="knob-shape"
+                    d="M50 3.333C33.333 3.333 16.667 36.666 16.667 60c0 23.334 16.666 36.667 33.333 36.667 16.667 0 33.334-13.334 33.333-36.667C83.333 36.667 66.667 3.333 50 3.333z" />
+                <path class="knob-seed"
+                    d="M50 43.333c-10 0-20 13.333-20 25S40 90 50 90s20-10 20-21.667c0-11.666-10-25-20-25z" />
+                <text class="knob-label" x="50%" y="25%"
+                    dominant-baseline="middle" text-anchor="middle">H</text>
+                <text class="knob-arrow" x="50%" y="70%"
+                    dominant-baseline="middle" text-anchor="middle">⇄</text>
+            </svg>
+        </input-knob>
+        <div class="buttons">
+            <button class="button-jiggle">👋 Jiggle</button>
+            <toggle-fullscreen><button class="button-fullscreen">⤴️
+                    Full</button>
+            </toggle-fullscreen>
+            <button class="button-detail" value="fancy">✨ Fancy</button>
+            <a href="https://github.com/GoogleChromeLabs/rotavo" target="_blank"
+                rel="noopener"><button>❔ Learn</button></a>
+        </div>
+        <input-knob value="10" scale="10" min="0" max="100"
+            class="vert-knob knob">
+            <svg preserveAspectRatio="none" x="0" y="0" viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <path class="knob-shape"
+                    d="M50 3.333C33.333 3.333 16.667 36.666 16.667 60c0 23.334 16.666 36.667 33.333 36.667 16.667 0 33.334-13.334 33.333-36.667C83.333 36.667 66.667 3.333 50 3.333z" />
+                <path class="knob-seed"
+                    d="M50 43.333c-10 0-20 13.333-20 25S40 90 50 90s20-10 20-21.667c0-11.666-10-25-20-25z" />
+                <text class="knob-label" x="50%" y="25%"
+                    dominant-baseline="middle" text-anchor="middle">V</text>
+                <text class="knob-arrow" x="50%" y="70%"
+                    dominant-baseline="middle" text-anchor="middle">⇅</text>
+            </svg>
+        </input-knob>
+    </nav>
 </div>
+
 <script src="/js/main.js" async defer></script>

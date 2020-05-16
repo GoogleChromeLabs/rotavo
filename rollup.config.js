@@ -13,11 +13,10 @@
 // limitations under the License.
 
 import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 
 export default [{
-  input: 'src/main.js',
+  input: 'client/main.js',
   output: {
     file: 'public/js/main.js',
     format: 'iife',
@@ -25,12 +24,6 @@ export default [{
   },
   plugins: [
     resolve(),
-    commonjs({
-      exclude: [
-        'node_modules/simplify-js/**',
-        'node_modules/shake.js/**',
-      ]
-    }),
     terser(),
   ]
 }];
