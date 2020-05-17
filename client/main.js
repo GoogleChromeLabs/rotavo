@@ -25,10 +25,10 @@ class RotavoApp {
       vertKnob: null,
     };
 
-    this.x = 10;
-    this.y = 10;
-    this.xMax = 100;
-    this.yMax = 100;
+    this.x = 409;
+    this.y = 409;
+    this.xMax = 4096;
+    this.yMax = 4096;
     this.xRatio = 1;
     this.yRatio = 1;
     this.updating = false;
