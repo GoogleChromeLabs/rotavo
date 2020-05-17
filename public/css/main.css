@@ -49,6 +49,8 @@ body {
   right: 2px;
   bottom: 2px;
   left: 2px;
+  margin: 0;
+  padding: 0;
 }
 
 .controls {
